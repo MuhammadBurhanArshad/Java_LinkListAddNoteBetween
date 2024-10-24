@@ -29,7 +29,28 @@ public class LinkList {
         System.out.print("null \n");
     }
 
-   public void addBetween(Node start, Node end){
-    
+   public void addBetween(int startPoint, LinkList previousLinkList, LinkList newLinkList){
+        Node oldStart = previousLinkList.head;
+
+        while(oldStart != null && oldStart.data != startPoint){
+            oldStart = oldStart.next;
+        }
+
+        if(oldStart == null){
+            System.out.println("Start point not found");
+            return;
+        }
+
+        Node oldStartNext = oldStart.next;
+        oldStart.next = newLinkList.head;
+
+        Node newLinkListLast = newLinkList.head;
+
+
+        while(newLinkListLast.next != null){
+            newLinkListLast = newLinkListLast.next;
+        }
+
+        newLinkListLast.next = oldStartNext;
    }
 }

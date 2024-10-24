@@ -18,8 +18,9 @@ class Main{
         linkList2.add(70);
         linkList2.add(80);
 
-        
+        linkList.addBetween(20, linkList, linkList2);
 
+        linkList.displayLinkList();
         
 
        }
